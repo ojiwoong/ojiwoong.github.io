@@ -557,177 +557,177 @@
 <ul>
 <li>
 <p><strong>단일 글자</strong>로 이름을 짓지 않고 이름을 통해 쓰임새를 알 수 있도록 한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-function q() {
-  // ...
-}
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">function</span> <span class="token function">q</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
 
-// good
-function query() {
-  // ...
-}</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">function</span> <span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre></div>
 </li>
 <li>
 <p>이름의 맨 앞이나 맨 뒤쪽에 <strong>밑줄( _ )</strong>을 사용하지 않는다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-this.__firstName__ = &#39;Panda&#39;;
-this.firstName_ = &#39;Panda&#39;;
-this._firstName = &#39;Panda&#39;;
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>__firstName__ <span class="token operator">=</span> <span class="token string">'Panda'</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>firstName_ <span class="token operator">=</span> <span class="token string">'Panda'</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>_firstName <span class="token operator">=</span> <span class="token string">'Panda'</span><span class="token punctuation">;</span>
 
-// good
-this.firstName = &#39;Panda&#39;;</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">=</span> <span class="token string">'Panda'</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 <li>
 <p><strong>this</strong>를 변수의 값으로 사용하지 않는다. 필요하다면 <strong>화살표 함수(Arrow Function)</strong>이나 <strong>바인딩</strong>을 사용하라.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-function foo() {
-  const self = this;
-  return function () {
-    console.log(self);
-  };
-}
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> self <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// good
-function bar() {
-  return () =&gt; {
-    console.log(this);
-  };
-}</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
 </li>
 <li>
 <p>가독성을 위해 약어는 <strong>모두 대문자</strong> 혹은 <strong>모두 소문자</strong>로 표기한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-import SmsContainer from &#39;./containers/SmsContainer&#39;;
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">import</span> SmsContainer <span class="token keyword">from</span> <span class="token string">'./containers/SmsContainer'</span><span class="token punctuation">;</span>
 
-// bad
-const HttpRequests = [
-  // ...
-];
+<span class="token comment">// bad</span>
+<span class="token keyword">const</span> HttpRequests <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-// good
-import SMSContainer from &#39;./containers/SMSContainer&#39;;
+<span class="token comment">// good</span>
+<span class="token keyword">import</span> SMSContainer <span class="token keyword">from</span> <span class="token string">'./containers/SMSContainer'</span><span class="token punctuation">;</span>
 
-// good
-const HTTPRequests = [
-  // ...
-];
+<span class="token comment">// good</span>
+<span class="token keyword">const</span> HTTPRequests <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-// also good
-const httpRequests = [
-  // ...
-];
+<span class="token comment">// also good</span>
+<span class="token keyword">const</span> httpRequests <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-// best
-import TextMessageContainer from &#39;./containers/TextMessageContainer&#39;;
+<span class="token comment">// best</span>
+<span class="token keyword">import</span> TextMessageContainer <span class="token keyword">from</span> <span class="token string">'./containers/TextMessageContainer'</span><span class="token punctuation">;</span>
 
-// best
-const requests = [
-  // ...
-];</code></pre></div>
+<span class="token comment">// best</span>
+<span class="token keyword">const</span> requests <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 <li>
 <p>export되는 파일 내의 모든 상수는 <strong>모두 대문자</strong>로 표기한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-const PRIVATE_VARIABLE = &#39;should not be unnecessarily uppercased within a file&#39;;
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">const</span> <span class="token constant">PRIVATE_VARIABLE</span> <span class="token operator">=</span> <span class="token string">'should not be unnecessarily uppercased within a file'</span><span class="token punctuation">;</span>
 
-// bad
-export const THING_TO_BE_CHANGED = &#39;should obviously not be uppercased&#39;;
+<span class="token comment">// bad</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">THING_TO_BE_CHANGED</span> <span class="token operator">=</span> <span class="token string">'should obviously not be uppercased'</span><span class="token punctuation">;</span>
 
-// bad
-export let REASSIGNABLE_VARIABLE = &#39;do not use let with uppercase variables&#39;;
+<span class="token comment">// bad</span>
+<span class="token keyword">export</span> <span class="token keyword">let</span> <span class="token constant">REASSIGNABLE_VARIABLE</span> <span class="token operator">=</span> <span class="token string">'do not use let with uppercase variables'</span><span class="token punctuation">;</span>
 
-// ---
+<span class="token comment">// ---</span>
 
-// allowed but does not supply semantic value
-export const apiKey = &#39;SOMEKEY&#39;;
+<span class="token comment">// allowed but does not supply semantic value</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> apiKey <span class="token operator">=</span> <span class="token string">'SOMEKEY'</span><span class="token punctuation">;</span>
 
-// better in most cases
-export const API_KEY = &#39;SOMEKEY&#39;;
+<span class="token comment">// better in most cases</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">API_KEY</span> <span class="token operator">=</span> <span class="token string">'SOMEKEY'</span><span class="token punctuation">;</span>
 
-// ---
+<span class="token comment">// ---</span>
 
-// bad - unnecessarily uppercases key while adding no semantic value
-export const MAPPING = {
-  KEY: &#39;value&#39;
-};
+<span class="token comment">// bad - unnecessarily uppercases key while adding no semantic value</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">MAPPING</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token constant">KEY</span><span class="token operator">:</span> <span class="token string">'value'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-// good
-export const MAPPING = {
-  key: &#39;value&#39;
-};</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">MAPPING</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  key<span class="token operator">:</span> <span class="token string">'value'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 <li>
 <p>이름에 복수형을 표기하지 않는다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">//bad
-let delivery_notes = [&quot;one&quot;, &quot;two&quot;];
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">//bad</span>
+<span class="token keyword">let</span> delivery_notes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-// good
-let delivery_note_list = [&quot;one&quot;, &quot;two&quot;];</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">let</span> delivery_note_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 <li>
 <p>줄일말을 사용하지 않는다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">//bad
-let del_note = 1;
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">//bad</span>
+<span class="token keyword">let</span> del_note <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 
-// good
-let delivery_note = 1;</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">let</span> delivery_note <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 </ul>
 <h1 id="파일-및-패키지" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%BC-%EB%B0%8F-%ED%8C%A8%ED%82%A4%EC%A7%80" aria-label="파일 및 패키지 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파일 및 패키지</h1>
 <ul>
 <li>
 <p>파일의 이름은 소문자로 표기한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-LonDon.png
-HELLOWORLD.pdf
-APP.js
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+LonDon<span class="token punctuation">.</span>png
+<span class="token constant">HELLOWORLD</span><span class="token punctuation">.</span>pdf
+<span class="token constant">APP</span><span class="token punctuation">.</span>js
 
-// good
-london.png
-helloworld.pdf
-app.js</code></pre></div>
+<span class="token comment">// good</span>
+london<span class="token punctuation">.</span>png
+helloworld<span class="token punctuation">.</span>pdf
+app<span class="token punctuation">.</span>js</code></pre></div>
 </li>
 <li>
 <p>패키지의 이름은 <strong>lowerCamelCase</strong>로 표기한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-my.examplecode.deepspace
-my.example_code.deep_space
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+my<span class="token punctuation">.</span>examplecode<span class="token punctuation">.</span>deepspace
+my<span class="token punctuation">.</span>example_code<span class="token punctuation">.</span>deep_space
 
-// good
-my.exampleCode.deepSpace</code></pre></div>
+<span class="token comment">// good</span>
+my<span class="token punctuation">.</span>exampleCode<span class="token punctuation">.</span>deepSpace</code></pre></div>
 </li>
 <li>
 <p>파일의 이름은 <strong>default export의 이름</strong>과 일치해야한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// file 1 contents
-class CheckBox {
-  // ...
-}
-export default CheckBox;
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// file 1 contents</span>
+<span class="token keyword">class</span> <span class="token class-name">CheckBox</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> CheckBox<span class="token punctuation">;</span>
 
-// file 2 contents
-export default function fortyTwo() { return 42; }
+<span class="token comment">// file 2 contents</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">fortyTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token number">42</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 
-// file 3 contents
-export default function insideDirectory() {}
+<span class="token comment">// file 3 contents</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">insideDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-// in some other file
-// bad
-import CheckBox from &#39;./checkBox&#39;; // PascalCase import/export, camelCase filename
-import FortyTwo from &#39;./FortyTwo&#39;; // PascalCase import/filename, camelCase export
-import InsideDirectory from &#39;./InsideDirectory&#39;; // PascalCase import/filename, camelCase export
+<span class="token comment">// in some other file</span>
+<span class="token comment">// bad</span>
+<span class="token keyword">import</span> CheckBox <span class="token keyword">from</span> <span class="token string">'./checkBox'</span><span class="token punctuation">;</span> <span class="token comment">// PascalCase import/export, camelCase filename</span>
+<span class="token keyword">import</span> FortyTwo <span class="token keyword">from</span> <span class="token string">'./FortyTwo'</span><span class="token punctuation">;</span> <span class="token comment">// PascalCase import/filename, camelCase export</span>
+<span class="token keyword">import</span> InsideDirectory <span class="token keyword">from</span> <span class="token string">'./InsideDirectory'</span><span class="token punctuation">;</span> <span class="token comment">// PascalCase import/filename, camelCase export</span>
 
-// bad
-import CheckBox from &#39;./check_box&#39;; // PascalCase import/export, snake_case filename
-import forty_two from &#39;./forty_two&#39;; // snake_case import/filename, camelCase export
-import inside_directory from &#39;./inside_directory&#39;; // snake_case import, camelCase export
-import index from &#39;./inside_directory/index&#39;; // requiring the index file explicitly
-import insideDirectory from &#39;./insideDirectory/index&#39;; // requiring the index file explicitly
+<span class="token comment">// bad</span>
+<span class="token keyword">import</span> CheckBox <span class="token keyword">from</span> <span class="token string">'./check_box'</span><span class="token punctuation">;</span> <span class="token comment">// PascalCase import/export, snake_case filename</span>
+<span class="token keyword">import</span> forty_two <span class="token keyword">from</span> <span class="token string">'./forty_two'</span><span class="token punctuation">;</span> <span class="token comment">// snake_case import/filename, camelCase export</span>
+<span class="token keyword">import</span> inside_directory <span class="token keyword">from</span> <span class="token string">'./inside_directory'</span><span class="token punctuation">;</span> <span class="token comment">// snake_case import, camelCase export</span>
+<span class="token keyword">import</span> index <span class="token keyword">from</span> <span class="token string">'./inside_directory/index'</span><span class="token punctuation">;</span> <span class="token comment">// requiring the index file explicitly</span>
+<span class="token keyword">import</span> insideDirectory <span class="token keyword">from</span> <span class="token string">'./insideDirectory/index'</span><span class="token punctuation">;</span> <span class="token comment">// requiring the index file explicitly</span>
 
-// good
-import CheckBox from &#39;./CheckBox&#39;; // PascalCase export/import/filename
-import fortyTwo from &#39;./fortyTwo&#39;; // camelCase export/import/filename
-import insideDirectory from &#39;./insideDirectory&#39;; // camelCase export/import/directory name/implicit &quot;index&quot;
-// ^ supports both insideDirectory.js and insideDirectory/index.js</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">import</span> CheckBox <span class="token keyword">from</span> <span class="token string">'./CheckBox'</span><span class="token punctuation">;</span> <span class="token comment">// PascalCase export/import/filename</span>
+<span class="token keyword">import</span> fortyTwo <span class="token keyword">from</span> <span class="token string">'./fortyTwo'</span><span class="token punctuation">;</span> <span class="token comment">// camelCase export/import/filename</span>
+<span class="token keyword">import</span> insideDirectory <span class="token keyword">from</span> <span class="token string">'./insideDirectory'</span><span class="token punctuation">;</span> <span class="token comment">// camelCase export/import/directory name/implicit "index"</span>
+<span class="token comment">// ^ supports both insideDirectory.js and insideDirectory/index.js</span></code></pre></div>
 </li>
 </ul>
 <h1 id="변수" style="position:relative;"><a href="#%EB%B3%80%EC%88%98" aria-label="변수 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>변수</h1>
@@ -735,52 +735,52 @@ import insideDirectory from &#39;./insideDirectory&#39;; // camelCase export/imp
 <li>변수의 이름은 <strong>lowerCamelCase</strong>로 표기한다.단, export되는 파일 내의 상수는 예외.</li>
 <li>
 <p>변수의 이름은 <strong>알파벳</strong>으로 시작해야한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-let 123Number = 123;
-let HELLO_WORLD = &quot;Hello World&quot;;
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">let</span> <span class="token number">123</span>Number <span class="token operator">=</span> <span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token constant">HELLO_WORLD</span> <span class="token operator">=</span> <span class="token string">"Hello World"</span><span class="token punctuation">;</span>
 
-// good
-let number = 369;
-let helloString = &quot;Hello World&quot;;</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">let</span> number <span class="token operator">=</span> <span class="token number">369</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> helloString <span class="token operator">=</span> <span class="token string">"Hello World"</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 </ul>
 <h1 id="함수" style="position:relative;"><a href="#%ED%95%A8%EC%88%98" aria-label="함수 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>함수</h1>
 <ul>
 <li>
 <p>함수는 <strong>lowerCamelCase</strong>로 표기한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-function MyFunction() {...}
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">function</span> <span class="token function">MyFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>
 
-// good
-function myFunction() {...}</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span></code></pre></div>
 </li>
 <li>
 <p>함수의 이름은 동사 또는 동사구문으로 표기한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-function whereIsCamera() { ... }
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">function</span> <span class="token function">whereIsCamera</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
 
-// good
-function findCamera() { ... }
-function getFoo() { ... } // getter
-function setBar() { ... } // setter
-function hasCoo() { ... } // booleans</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">function</span> <span class="token function">findCamera</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">getFoo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token comment">// getter</span>
+<span class="token keyword">function</span> <span class="token function">setBar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token comment">// setter</span>
+<span class="token keyword">function</span> <span class="token function">hasCoo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token comment">// booleans</span></code></pre></div>
 </li>
 <li>
 <p>함수를 default export할 때는 <strong>camelCase</strong>로 표기한다.단, 함수의 이름이 파일의 이름과 구분되어야 한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">function makeStyleGuide() {
-  // ...
-}
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">function</span> <span class="token function">makeStyleGuide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
 
-export default makeStyleGuide;</code></pre></div>
+<span class="token keyword">export</span> <span class="token keyword">default</span> makeStyleGuide<span class="token punctuation">;</span></code></pre></div>
 </li>
 <li>함수 라이브러리를 export할 때는 <strong>PascalCase</strong>로 표기한다.</li>
 <li>
 <p>함수의 파라미터는 <strong>lowerCamelCase</strong>로 표기한다.단, 한글자의 파라미터는 public 메소드에서는 사용하지 않는다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-function someFunction(SOMEVALUE, SOMEARRAY) { ... }
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">function</span> <span class="token function">someFunction</span><span class="token punctuation">(</span><span class="token parameter"><span class="token constant">SOMEVALUE</span><span class="token punctuation">,</span> <span class="token constant">SOMEARRAY</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
 
-// good
-function someFunction(someValue, someArray) { ... }</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">function</span> <span class="token function">someFunction</span><span class="token punctuation">(</span><span class="token parameter">someValue<span class="token punctuation">,</span> someArray</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span></code></pre></div>
 </li>
 <li>템플릿 함수의 파라미터는 모두 간결해야하고 <strong>한글자</strong> 또는 <strong>한단어</strong>여야 한다.또, <strong>모두 대문자</strong>로 표기한다.</li>
 </ul>
@@ -788,48 +788,48 @@ function someFunction(someValue, someArray) { ... }</code></pre></div>
 <ul>
 <li>
 <p>객체의 이름은 <strong>lowerCamelCase</strong>로 표기한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-const OBJEcttsssss = {};
-const this_is_my_object = {};
-function c() {}
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">const</span> OBJEcttsssss <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> this_is_my_object <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-// good
-const thisIsMyObject = {};
-function thisIsMyFunction() {}</code></pre></div>
+<span class="token comment">// good</span>
+<span class="token keyword">const</span> thisIsMyObject <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">thisIsMyFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre></div>
 </li>
 <li>
 <p>객체를 export할 때는 <strong>PascalCase</strong>로 표기한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const AirbnbStyleGuide = {
-  es6: {
-  },
-};
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> AirbnbStyleGuide <span class="token operator">=</span> <span class="token punctuation">{</span>
+  es6<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-export default AirbnbStyleGuide;</code></pre></div>
+<span class="token keyword">export</span> <span class="token keyword">default</span> AirbnbStyleGuide<span class="token punctuation">;</span></code></pre></div>
 </li>
 </ul>
 <h1 id="클래스" style="position:relative;"><a href="#%ED%81%B4%EB%9E%98%EC%8A%A4" aria-label="클래스 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>클래스</h1>
 <ul>
 <li>
 <p>클래스나 생성자의 이름은 <strong>PascalCase</strong>로 표기한다.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">// bad
-function user(options) {
-  this.name = options.name;
-}
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token comment">// bad</span>
+<span class="token keyword">function</span> <span class="token function">user</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> options<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-const bad = new user({
-  name: &#39;nope&#39;,
-});
+<span class="token keyword">const</span> bad <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">user</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'nope'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// good
-class User {
-  constructor(options) {
-    this.name = options.name;
-  }
-}
+<span class="token comment">// good</span>
+<span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> options<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-const good = new User({
-  name: &#39;yup&#39;,
-});</code></pre></div>
+<span class="token keyword">const</span> good <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'yup'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 <li>클래스의 이름은 <strong>명사</strong> 또는 <strong>명사구문</strong>으로 표기한다.또한, 인터페이스의 경우 명사 대신 <strong>형용사</strong> 또는 <strong>형용사구문</strong>으로 표기할 수 있다.</li>
 <li>클래스를 export할 때는 <strong>PascalCase</strong>로 표기한다.</li>
