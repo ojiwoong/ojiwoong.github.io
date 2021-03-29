@@ -602,14 +602,8 @@ Internet Explorer에서는 지원하지 않아, 크로스 브라우저를 고려
 <div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">var</span> iterable <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
 
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> value <span class="token keyword">in</span> iterable<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 출력</span>
-<span class="token number">2</span>
-<span class="token number">0</span>
-<span class="token number">2</span>
-<span class="token number">1</span></code></pre></div>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2, 0, 2, 1</span>
+<span class="token punctuation">}</span></code></pre></div>
 <h2 id="forin-문-과-forof-문의-차이점" style="position:relative;"><a href="#forin-%EB%AC%B8-%EA%B3%BC-forof-%EB%AC%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90" aria-label="forin 문 과 forof 문의 차이점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>for...in 문 과 for...of 문의 차이점</h2>
 <p>for...in 문 : 객체의 모든 열거 가능한 속성(property)에 대한 반복<br>
 for...of 문 : [symbol.iterator] 속성을 가지는 컬렉션 전용</p>
